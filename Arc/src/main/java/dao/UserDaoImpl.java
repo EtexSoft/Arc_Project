@@ -4,16 +4,19 @@ import domain.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
 /**
  * Created by Андрей on 03.01.2016.
  */
-/** @Repository **/
+@Repository
 @Transactional
 public class UserDaoImpl implements UserDao {
-    /** @Autowired(required = true) **/
+    @Autowired(required = true)
     private SessionFactory factory;
 
     public UserDaoImpl() {
